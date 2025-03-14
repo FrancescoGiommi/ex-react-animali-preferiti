@@ -12,6 +12,46 @@
     />
     <title>I miei animali Preferiti</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!--Creo il componente React-->
+    <script type="text/babel">
+      const { useState } = React;
+      const ReactApp = () => {
+        const animals = [
+          "Leone",
+          "Tigre",
+          "Elefante",
+          "Canguro",
+          "Panda",
+          "Giraffa",
+          "Lupo",
+        ];
+
+        return (
+          <details>
+            <h2>Animali</h2>
+            <ul>
+              <li>{animals[0]}</li>
+              <li>{animals[1]}</li>
+              <li>{animals[2]}</li>
+              <li>{animals[3]}</li>
+              <li>{animals[4]}</li>
+              <li>{animals[5]}</li>
+              <li>{animals[6]}</li>
+            </ul>
+          </details>
+        );
+      };
+    </script>
+    <!--Monto il componente-->
+    <script type="text/babel">
+      const { createRoot } = ReactDOM;
+      const animalsList = document.querySelector(".lista-animali");
+      const root = createRoot(animalsList);
+      root.render(<ReactApp />);
+    </script>
   </head>
   <body>
     <header>
